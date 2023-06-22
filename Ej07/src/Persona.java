@@ -31,13 +31,13 @@ también calcularemos un porcentaje de cuantos son mayores de edad y cuantos men
 public class Persona {
     private String nombre;
     private int edad;
-    private char genero;
-    private int peso;
-    private int altura;
+    private String genero;
+    private double peso;
+    private double altura;
     private double valorIMC;
     private boolean mayoriaEdad;
 
-    public Persona(String nombre, int edad, char genero, int peso, int altura) {
+    public Persona(String nombre, int edad, String genero, double peso, double altura) {
         this.nombre = nombre;
         this.edad = edad;
         this.genero = genero;
@@ -64,13 +64,12 @@ public class Persona {
         this.edad = edad;
     }
 
-    public char getGénero() {
-        return género;
+    public String getGenero() {
+        return genero;
     }
 
-    public void setGénero(char género) {
-        genero = género.toUpperCase();
-        if (genero == "M" || genero == "F" || genero == "O") { this.género = género; }
+    public void setGenero(String genero) {
+        if (genero.equalsIgnoreCase("M") || genero.equalsIgnoreCase("F") || genero.equalsIgnoreCase("O")) { this.genero = genero; }
         else {
             System.out.println("Error. Lamentablemente, de momento el género debe definirse como " +
                     " una de las siguientes opciones: M (Masculino), F (Femenino) u O (Otrxs)");
@@ -78,19 +77,19 @@ public class Persona {
 
     }
 
-    public int getPeso() {
+    public double getPeso() {
         return peso;
     }
 
-    public void setPeso(int peso) {
+    public void setPeso(double peso) {
         this.peso = peso;
     }
 
-    public int getAltura() {
+    public double getAltura() {
         return altura;
     }
 
-    public void setAltura(int altura) {
+    public void setAltura(double altura) {
         this.altura = altura;
     }
 }
