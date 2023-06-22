@@ -26,6 +26,14 @@ Por último, guardaremos los resultados de los métodos calcularIMC y esMayorDeE
 distintas variables, para después en el main, calcular un porcentaje de esas 4 personas
 cuantas están por debajo de su peso, cuantas en su peso ideal y cuantos, por encima, y
 también calcularemos un porcentaje de cuantos son mayores de edad y cuantos menores
+
+NOTA: Se decidió dejar como comentario los últimos métodos guardados y calculados en Main
+para aplicar métodos desde la clase ServicioPersona que cumplieran con esas funciones y
+dejaran más legible la clase Main.
+Para ello se generaron contadores como atributos public static pertinentes a la clase Persona
+en tanto abstracción (no característicos de sus instancias), y se modificó el método
+crearPersona (en ServicioPersona) para que aumentara dichos contadores llamando los
+métodos que corroboran esa información.
  */
 
 public class Persona {
@@ -36,6 +44,14 @@ public class Persona {
     private double altura;
     private double valorIMC;
     private boolean mayoriaEdad;
+    public static int contadorPersonas;
+    public static int contadorBajoPeso;
+    public static int contadorIdealPeso;
+    public static int contadorAltoPeso;
+    public static int contadorMayorEdad;
+    public static int contadorMenorEdad;
+
+
 
     public Persona(String nombre, int edad, String genero, double peso, double altura) {
         this.nombre = nombre;
@@ -47,6 +63,7 @@ public class Persona {
 
     public Persona() {
     }
+
 
     public String getNombre() {
         return nombre;
@@ -69,13 +86,7 @@ public class Persona {
     }
 
     public void setGenero(String genero) {
-        if (genero.equalsIgnoreCase("M") || genero.equalsIgnoreCase("F") || genero.equalsIgnoreCase("O")) { this.genero = genero; }
-        else {
-            System.out.println("Error. Lamentablemente, de momento el género debe definirse como " +
-                    " una de las siguientes opciones: M (Masculino), F (Femenino) u O (Otrxs)");
-        }
-
-    }
+        this.genero = genero; }
 
     public double getPeso() {
         return peso;

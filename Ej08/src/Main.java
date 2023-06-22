@@ -7,13 +7,15 @@ public class Main {
         Scanner input = new Scanner(System.in).useDelimiter("\n");
         System.out.println("Ingrese una palabra o frase");
         c1.setFrase(input.next());
-        c1.mostrarVocales();
-        c1.invertirFrase();
-        c1.vecesRepetido();
-        c1.compararLongitud("Fuego, mantenlo prendido fuego.");
-        c1.unirFrase("Fuego, mantenlo prendido fuego.");
-        c1.reemplazarLetraA();
-        c1.contieneCaracter();
+
+        ServicioCadena sc1 = new ServicioCadena();
+        sc1.mostrarVocales(c1);
+        sc1.invertirFrase(c1);
+        sc1.vecesRepetido(c1);
+        sc1.compararLongitud(c1, "Fuego, mantenlo prendido fuego.");
+        sc1.unirFrase(c1, "Fuego, mantenlo prendido fuego.");
+        sc1.reemplazarLetraA(c1);
+        sc1.contieneCaracter(c1);
 
     }
 }

@@ -16,6 +16,10 @@ public class Main {
         int imc4 = sp1.calcularIMC(p4);
         boolean edad4 = sp1.esMayorDeEdad(p4);
 
+        ServicioPersona.promedioPeso();
+        ServicioPersona.promedioEdad();
+
+        /*
         int contadorBajo = 0;
         int contadorIdeal = 0;
         int contadorAlto = 0;
@@ -45,7 +49,9 @@ public class Main {
         double promedioMayor = contadorMayor / 4.0;
         double promedioMenor = contadorMenor / 4.0;
         System.out.println("De las 4 personas,"+ promedioMayor+ " es mayor de edad, mientras que el  "+ promedioMenor+ " es menor de edad.");
-        
+        */
+
+
     }
 
 }
