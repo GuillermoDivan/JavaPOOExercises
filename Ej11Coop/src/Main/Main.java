@@ -62,7 +62,7 @@ public class Main {
 
         do {
             System.out.println("Ingrese la opción deseada: 1. Cargar película. | 2. Consultar lista de películas existentes. | 3. Consultar lista " +
-                    " de películas por genre. | 4. Consultar si la película está en la base. | 5. Alquilar película. | 6. Consultar lista de películas" +
+                    "de películas por genre. | 4. Consultar si la película está en la base. | 5. Alquilar película. | 6. Consultar lista de películas" +
                     " alquiladas. | 7. Consultar películas alquiladas para un día determinado. | 8. Salida ");
             int opcion = input.nextInt();
             switch (opcion) {

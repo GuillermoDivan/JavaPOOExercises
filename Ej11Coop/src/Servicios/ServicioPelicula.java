@@ -33,20 +33,29 @@ public class ServicioPelicula {
         System.out.println("");
     }
 
-    public void buscarPorGenre() { //COMPLETAR CUANDO GENRE NO SE ENCUENTRA!!!
+    public void buscarPorGenre() {
         System.out.println("Elija el genre que le interesa. Opciones 'drama', 'comedia', 'terror'.");
         String opcion = input.next();
         ArrayList<Pelicula> genreElegido = new ArrayList<>();
+
         for (int i = 0; i < peliculasExistentes.size(); i++) {
             if (peliculasExistentes.get(i).getGenre().equalsIgnoreCase(opcion)) {
                 genreElegido.add(peliculasExistentes.get(i));
             }
+
+            if (i + 1 == peliculasExistentes.size()) {
+                System.out.println("No hay películas del género en nuestra base.");
+                return;
+            } else {
+                System.out.println("Lista de películas por género:");
+                for (int j = 0; j < genreElegido.size(); j++) {
+                    System.out.print("[" + genreElegido.get(j).getTitulo() + "]");
+                }
+                System.out.println("");
+            }
         }
-        System.out.println("Lista de películas por género:");
-        for (int i = 0; i < genreElegido.size(); i++) {
-            System.out.print("[" + genreElegido.get(i).getTitulo() + "]");
-        }
-        System.out.println("");
+
+
     }
 
     public void buscarPorTitulo() {
