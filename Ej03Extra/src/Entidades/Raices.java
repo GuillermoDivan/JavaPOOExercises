@@ -1,38 +1,45 @@
 package Entidades;
 
 public class Raices {
-    private double coeficienteA;
-    private double coeficienteB;
-    private double coeficienteC;
+    private double A;
+    private double B;
+    private double C;
     private double discriminante;
 
-    public Raices(double coeficienteA, double coeficienteB, double coeficienteC) {
-        this.coeficienteA = coeficienteA;
-        this.coeficienteB = coeficienteB;
-        this.coeficienteC = coeficienteC;
+    public Raices(double A, double B, double C) {
+        this.A = A;
+        this.B = B;
+        this.C = C;
     }
 
-    public double getCoeficienteA() {
-        return coeficienteA;
+    public double getA() {
+        return A;
     }
-    public void setCoeficienteA(double coeficienteA) {
-        this.coeficienteA = coeficienteA;
+
+    public void setA(double a) {
+        A = a;
     }
-    public double getCoeficienteB() {
-        return coeficienteB;
+
+    public double getB() {
+        return B;
     }
-    public void setCoeficienteB(double coeficienteB) {
-        this.coeficienteB = coeficienteB;
+
+    public void setB(double b) {
+        B = b;
     }
-    public double getCoeficienteC() {
-        return coeficienteC;
+
+    public double getC() {
+        return C;
     }
-    public void setCoeficienteC(double coeficienteC) {
-        this.coeficienteC = coeficienteC;
+
+    public void setC(double c) {
+        C = c;
     }
+
     public double getDiscriminante() {
         return discriminante;
     }
+
     public void setDiscriminante(double discriminante) {
         this.discriminante = discriminante;
     }

@@ -23,9 +23,15 @@ delante de -b
 
 package Main;
 
+import Entidades.Raices;
+import Servicios.ServicioRaices;
+
 public class Main {
     public static void main(String[] args) {
-
+        ServicioRaices sr = new ServicioRaices();
+        Raices r = new Raices(-2, 1, 2);
+        sr.getDiscriminante(r);
+        sr.calcular(r);
     }
 }
 
