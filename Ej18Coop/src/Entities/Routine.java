@@ -57,5 +57,12 @@ public class Routine {
         this.duration = duration;
     }
 
+    public ArrayList<User> getActiveUsers() {
+        return activeUsers;
+    }
+
+    public void setActiveUsers(User activeUser) {
+        this.activeUsers.add(activeUser);
+    }
 }
 

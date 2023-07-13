@@ -7,7 +7,7 @@ public class User {
     private String name, goal;
     private double height, weight;
     private LocalDate birthdate;
-    private ArrayList<Routine> activeRoutines;
+    private ArrayList<Routine> activeRoutines = new ArrayList<>();
 
     public User(int id, String name, String goal, double height, double weight, LocalDate birthdate) {
         this.id = id;
@@ -77,6 +77,12 @@ public class User {
         this.birthdate = birthdate;
     }
 
+    public ArrayList<Routine> getActiveRoutines() {
+        return activeRoutines;
+    }
 
+    public void setActiveRoutines(Routine activeRoutines) {
+        this.activeRoutines.add(activeRoutines);
+    }
 }
 

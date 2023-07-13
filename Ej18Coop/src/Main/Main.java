@@ -45,27 +45,29 @@ public class Main {
     public static void main(String[] args) {
 
         UserService us = new UserService();
+        RoutineService r = new RoutineService();
+
         us.signUpUser();
+        r.createRoutine();
+        us.addNewRoutine();
         //us.signUpUser();
         //us.signUpUser();
         //us.getUsersList();
-        us.showUser();
-        us.updateUser();
+        //us.showUser();
+        //us.updateUser();
         //us.removeUser();
         //us.getUsersList();
         us.showUser();
 
 
-
-        RoutineService r = new RoutineService();
-        r.createRoutine();
+        //r.createRoutine();
         //r.createRoutine();
         //r.createRoutine();
         //r.getRoutineList();
-        r.toString();
-        r.updateRoutine();
+        //r.showRoutine();
+        //r.updateRoutine();
         //r.removeRoutine();
         //r.getRoutineList();
-        r.toString();
+        //r.showRoutine();
     }
 }

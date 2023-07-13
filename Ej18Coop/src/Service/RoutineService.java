@@ -10,7 +10,7 @@ import java.util.Scanner;
 public class RoutineService {
     Scanner input = new Scanner(System.in).useDelimiter("\n");
     DateTimeFormatter DMY = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-    ArrayList<Routine> RoutineList = new ArrayList<>();
+    static ArrayList<Routine> RoutineList = new ArrayList<>();
 
     public Routine createRoutine(){
         System.out.println("Ingrese el id de la rutina.");
@@ -38,16 +38,21 @@ public class RoutineService {
         int searchFor = input.nextInt();
         for (int i = 0; i < RoutineList.size(); i++) {
             if (searchFor == RoutineList.get(i).getId()) {
+                String activeUsers = "";
+                for (int j = 0; j < RoutineList.get(i).getActiveUsers().size(); j++ ){
+                    activeUsers += RoutineList.get(i).getActiveUsers().get(j).getName() + ", ";
+                }
+
                 System.out.println(
                         " Id de la rutina: " + RoutineList.get(i).getId() +
                                 ". Nombre de la rutina: " + RoutineList.get(i).getName() +
                                 ". Nivel de dificultad (X/10) " + RoutineList.get(i).getDifficultyLevel() +
-                                ". Duration prevista: " + RoutineList.get(i).getDuration() +
-                                ". Descripción: " + RoutineList.get(i).getDescription() + '.');
+                                ". Duracion prevista: " + RoutineList.get(i).getDuration() +
+                                " días. Descripción: " + RoutineList.get(i).getDescription() +
+                                ". Usuarix(s) con esta rutina: " + activeUsers+ '.');
             }
         }
     }
-
 
     public void getRoutineList(){
         for (int i = 0; i < RoutineList.size(); i++ ) {

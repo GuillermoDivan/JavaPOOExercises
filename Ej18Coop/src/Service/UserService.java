@@ -8,7 +8,7 @@ import java.time.*;
 public class UserService {
     Scanner input = new Scanner(System.in).useDelimiter("\n");
     DateTimeFormatter DMY = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-    ArrayList<User> UsersList = new ArrayList<>();
+    static ArrayList<User> UsersList = new ArrayList<>();
 
     public void signUpUser(){
         User user = new User();
@@ -35,6 +35,11 @@ public class UserService {
         for (int i = 0; i < UsersList.size(); i++ ) {
             User user = UsersList.get(i);
             if (searchFor == UsersList.get(i).getId()) {
+                String routines = "";
+                for (int j = 0; j < UsersList.get(i).getActiveRoutines().size(); j++ ){
+                    routines += UsersList.get(i).getActiveRoutines().get(j).getName() + ", ";
+                }
+
                 System.out.println(
                         "ID: " + UsersList.get(i).getId() +
                         ". Nombre: " + UsersList.get(i).getName() +
@@ -42,7 +47,8 @@ public class UserService {
                         ". Edad actual: " + UsersList.get(i).getAge() +
                         ". Peso actual: " + UsersList.get(i).getHeight() +
                         ". Altura: " + UsersList.get(i).getWeight() +
-                        ". Objetivo de entrenamiento: " + UsersList.get(i).getGoal() + '.');
+                        ". Objetivo de entrenamiento: " + UsersList.get(i).getGoal() +
+                        ". Rutina(s) activa(s): " + routines+ '.');
             }
         }
     }
@@ -74,6 +80,24 @@ public class UserService {
             }
         }
     }
+
+    public void addNewRoutine() {
+        System.out.println("Ingrese el id (DNI) de la persona para agregarle una rutina ya creada.");
+        int searchFor = input.nextInt();
+        for (int i = 0; i < UsersList.size(); i++) {
+            if (searchFor == UsersList.get(i).getId()) {
+                System.out.println("Ingrese el id de la rutina que desea asignarle.");
+                int searchFor2 = input.nextInt();
+                for (int j = 0; j < RoutineService.RoutineList.size(); j++) {
+                    if (searchFor2 == RoutineService.RoutineList.get(j).getId()) {
+                        UsersList.get(i).setActiveRoutines(RoutineService.RoutineList.get(j));
+                        RoutineService.RoutineList.get(j).setActiveUsers(UsersList.get(i));
+                    }
+                }
+            }
+        }
+    }
+
 
     public void removeUser(){
         System.out.println("Ingrese el id (DNI) de la persona que quiere quitar del sistema.");
